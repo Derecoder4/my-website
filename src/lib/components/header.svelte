@@ -4,7 +4,7 @@
   let mobileMenuOpen = false;
   let currentTheme: "light" | "dark" = "dark";
 
-  theme.subscribe((value) => {
+  theme.subscribe((value: "light" | "dark") => {
     currentTheme = value;
   });
 

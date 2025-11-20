@@ -1,4 +1,4 @@
-import { c as create_ssr_component, a as add_attribute, e as escape, f as each, v as validate_component } from "../../chunks/ssr.js";
+import { c as create_ssr_component, d as add_attribute, e as escape, f as each, v as validate_component } from "../../chunks/ssr.js";
 const Hero = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `<section id="home" class="mx-auto max-w-7xl px-4 py-16 md:px-6 md:py-24 reveal-on-scroll" data-svelte-h="svelte-vjad18"><div class="grid gap-8 md:grid-cols-2 md:items-center"><div> <h1 class="text-4xl font-semibold leading-tight md:text-5xl">Build fast, functional, and modern digital products.</h1> <p class="mt-4 text-base text-muted-foreground md:mt-6 md:text-base">I create tools, landing pages, web apps, dashboards, bots, and portfolio
         websites across Web2 and Web3. Whether you need a personal brand
@@ -198,41 +198,7 @@ const About = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   })}</div></div></div></section>`;
 });
 const Contact = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let isSubmitting = false;
-  let submitStatus = "idle";
-  let statusMessage = "";
-  async function handleSubmit(event) {
-    event.preventDefault();
-    isSubmitting = true;
-    submitStatus = "idle";
-    const form = event.target;
-    const formData = new FormData(form);
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", { method: "POST", body: formData });
-      const data = await response.json();
-      if (data.success) {
-        submitStatus = "success";
-        statusMessage = "Message sent successfully! I'll get back to you soon.";
-        form.reset();
-      } else {
-        submitStatus = "error";
-        statusMessage = "Something went wrong. Please try again.";
-      }
-    } catch (error) {
-      submitStatus = "error";
-      statusMessage = "Failed to send message. Please try again.";
-    } finally {
-      isSubmitting = false;
-      setTimeout(
-        () => {
-          submitStatus = "idle";
-          statusMessage = "";
-        },
-        5e3
-      );
-    }
-  }
-  return `<section id="contact" class="mx-auto max-w-3xl px-4 py-16 md:px-6 md:py-24 reveal-on-scroll"><h2 class="text-3xl font-semibold text-center md:text-4xl" data-svelte-h="svelte-1je1705">Let&#39;s Work Together</h2> <p class="mt-3 text-center text-sm text-muted-foreground md:mt-4 md:text-base" data-svelte-h="svelte-1x3srdj">Have a project in mind? Let&#39;s build something amazing together.</p> <form${add_attribute("onsubmit", handleSubmit, 0)} class="mt-8 space-y-5 md:mt-12 md:space-y-6"><input type="hidden" name="access_key" value="e24e68f1-fa48-4054-a1d2-88b42834cb90"> <input type="hidden" name="redirect" value="false"> <input type="hidden" name="subject" value="New Contact Form Submission from Portfolio"> <div data-svelte-h="svelte-wq2m7"><label for="name" class="block text-sm font-semibold">Name</label> <input id="name" name="name" type="text" required class="mt-2 w-full rounded-lg border border-border bg-secondary px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary transition md:py-3 md:text-base" placeholder="Your name"></div> <div data-svelte-h="svelte-js2a58"><label for="email" class="block text-sm font-semibold">Email</label> <input id="email" name="email" type="email" required class="mt-2 w-full rounded-lg border border-border bg-secondary px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary transition md:py-3 md:text-base" placeholder="your@email.com"></div> <div data-svelte-h="svelte-8f7yxn"><label for="message" class="block text-sm font-semibold">Message</label> <textarea id="message" name="message" rows="4" required class="mt-2 w-full rounded-lg border border-border bg-secondary px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary transition md:rows-5 md:py-3 md:text-base" placeholder="Tell me about your project..."></textarea></div> <input type="checkbox" name="botcheck" class="hidden" style="display: none;"> <button type="submit" ${isSubmitting ? "disabled" : ""} class="w-full rounded-lg border border-primary bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition md:px-8 md:py-3 md:text-base disabled:opacity-50 disabled:cursor-not-allowed">${escape(isSubmitting ? "Sending..." : "Send Message")}</button> ${submitStatus === "success" ? `<div class="rounded-lg bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 p-4 text-sm text-green-800 dark:text-green-200">${escape(statusMessage)}</div>` : ``} ${submitStatus === "error" ? `<div class="rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 p-4 text-sm text-red-800 dark:text-red-200">${escape(statusMessage)}</div>` : ``}</form></section>`;
+  return `<section id="contact" class="mx-auto max-w-3xl px-4 py-16 md:px-6 md:py-24 reveal-on-scroll"><h2 class="text-3xl font-semibold text-center md:text-4xl" data-svelte-h="svelte-1je1705">Let&#39;s Work Together</h2> <p class="mt-3 text-center text-sm text-muted-foreground md:mt-4 md:text-base" data-svelte-h="svelte-1x3srdj">Have a project in mind? Let&#39;s build something amazing together.</p> <form class="mt-8 space-y-5 md:mt-12 md:space-y-6"><input type="hidden" name="access_key" value="e24e68f1-fa48-4054-a1d2-88b42834cb90"> <input type="hidden" name="redirect" value="false"> <input type="hidden" name="subject" value="New Contact Form Submission from Portfolio"> <div data-svelte-h="svelte-wq2m7"><label for="name" class="block text-sm font-semibold">Name</label> <input id="name" name="name" type="text" required class="mt-2 w-full rounded-lg border border-border bg-secondary px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary transition md:py-3 md:text-base" placeholder="Your name"></div> <div data-svelte-h="svelte-js2a58"><label for="email" class="block text-sm font-semibold">Email</label> <input id="email" name="email" type="email" required class="mt-2 w-full rounded-lg border border-border bg-secondary px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary transition md:py-3 md:text-base" placeholder="your@email.com"></div> <div data-svelte-h="svelte-8f7yxn"><label for="message" class="block text-sm font-semibold">Message</label> <textarea id="message" name="message" rows="4" required class="mt-2 w-full rounded-lg border border-border bg-secondary px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary transition md:rows-5 md:py-3 md:text-base" placeholder="Tell me about your project..."></textarea></div> <input type="checkbox" name="botcheck" class="hidden" style="display: none;"> <button type="submit" ${""} class="w-full rounded-lg border border-primary bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition md:px-8 md:py-3 md:text-base disabled:opacity-50 disabled:cursor-not-allowed">${escape("Send Message")}</button> ${``} ${``}</form></section>`;
 });
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `${$$result.head += `<!-- HEAD_svelte-1f91848_START -->${$$result.title = `<title>Dere Boyo - Digital Product Builder</title>`, ""}<meta name="description" content="Building fast, functional, and modern digital products. Web2, Web3, no-code, and code solutions."><!-- HEAD_svelte-1f91848_END -->`, ""} <main class="min-h-screen bg-background text-foreground">${validate_component(Hero, "Hero").$$render($$result, {}, {}, {})} ${validate_component(Projects, "Projects").$$render($$result, {}, {}, {})} ${validate_component(Services, "Services").$$render($$result, {}, {}, {})} ${validate_component(About, "About").$$render($$result, {}, {}, {})} ${validate_component(Contact, "Contact").$$render($$result, {}, {}, {})}</main>`;

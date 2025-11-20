@@ -56,7 +56,7 @@
     Have a project in mind? Let's build something amazing together.
   </p>
 
-  <form onsubmit={handleSubmit} class="mt-8 space-y-5 md:mt-12 md:space-y-6">
+  <form on:submit={handleSubmit} class="mt-8 space-y-5 md:mt-12 md:space-y-6">
     <input
       type="hidden"
       name="access_key"

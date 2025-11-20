@@ -8,7 +8,7 @@
   let currentTheme: "light" | "dark" = "dark";
 
   onMount(() => {
-    theme.subscribe((value) => {
+    theme.subscribe((value: "light" | "dark") => {
       currentTheme = value;
       document.documentElement.classList.remove("light", "dark");
       document.documentElement.classList.add(value);

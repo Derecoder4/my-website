@@ -1,8 +1,15 @@
 <script lang="ts">
+  interface Project {
+    title: string;
+    category: string;
+    image: string;
+    link: string;
+  }
+
   let searchQuery = "";
   let selectedCategory = "All";
 
-  const projects = [
+  const projects: Project[] = [
     // Portfolio Websites
     {
       title: "De Ronin",

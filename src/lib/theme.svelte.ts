@@ -14,7 +14,7 @@ function createTheme() {
   }
 
   function toggle() {
-    update(current => {
+    update((current: 'light' | 'dark') => {
       const newTheme = current === 'dark' ? 'light' : 'dark';
       if (browser) {
         localStorage.setItem('theme', newTheme);
