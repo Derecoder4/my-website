@@ -23,20 +23,3 @@ declare module "svelte/elements" {
 }
 
 export {};
-
-
-declare module "$app/types" {
-	export interface AppTypes {
-		RouteId(): "/" | "/projects";
-		RouteParams(): {
-			
-		};
-		LayoutParams(): {
-			"/": Record<string, never>;
-			"/projects": Record<string, never>
-		};
-		Pathname(): "/" | "/projects" | "/projects/";
-		ResolvedPathname(): `${"" | `/${string}`}${ReturnType<AppTypes['Pathname']>}`;
-		Asset(): "/favicon.png" | "/images/422brand.png" | "/images/axia.png" | "/images/boyo.png" | "/images/dataviz.png" | "/images/david-french.png" | "/images/deronin.png" | "/images/duke.png" | "/images/lig.png" | "/images/me.jpg" | "/images/menu-icon.png" | "/images/sons-design.png" | "/images/teaona.png" | "/images/torest-tech.png" | "/images/valery.png" | "/images/web3righteous.png" | string & {};
-	}
-}
