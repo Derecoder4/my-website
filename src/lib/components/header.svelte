@@ -17,13 +17,16 @@
   function toggleTheme() {
     theme.toggle();
   }
+
+  function toggleMenu() {
+    mobileMenuOpen = !mobileMenuOpen;
+  }
 </script>
 
 <header class="sticky top-0 z-50 border-b border-border bg-background">
   <nav
     class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-6 md:py-5"
   >
-    <!-- Replace text with profile image -->
     <a href="/" class="flex-shrink-0">
       <img
         src="/images/me.jpg"
@@ -37,15 +40,15 @@
         >Projects</a
       >
       <button
-        onclick={() => scrollToSection("services")}
+        on:click={() => scrollToSection("services")}
         class="text-sm hover:text-muted-foreground transition">Services</button
       >
       <button
-        onclick={() => scrollToSection("about")}
+        on:click={() => scrollToSection("about")}
         class="text-sm hover:text-muted-foreground transition">About</button
       >
       <button
-        onclick={() => scrollToSection("contact")}
+        on:click={() => scrollToSection("contact")}
         class="text-sm hover:text-muted-foreground transition">Contact</button
       >
       <a
@@ -53,9 +56,8 @@
         target="_blank"
         class="text-sm hover:text-muted-foreground transition">GitHub</a
       >
-      <!-- Added theme toggle button -->
       <button
-        onclick={toggleTheme}
+        on:click={toggleTheme}
         class="text-sm hover:text-muted-foreground transition pl-4 border-l border-border"
       >
         {currentTheme === "dark" ? "☀" : "🌙"}
@@ -64,13 +66,10 @@
 
     <!-- Mobile menu button and theme toggle -->
     <div class="flex items-center gap-4 md:hidden">
-      <button onclick={toggleTheme} class="text-xl">
+      <button on:click={toggleTheme} class="text-xl">
         {currentTheme === "dark" ? "☀" : "🌙"}
       </button>
-      <button
-        onclick={() => (mobileMenuOpen = !mobileMenuOpen)}
-        class="flex items-center justify-center"
-      >
+      <button on:click={toggleMenu} class="flex items-center justify-center">
         {#if mobileMenuOpen}
           <span class="text-xl">✕</span>
         {:else}
@@ -93,17 +92,17 @@
           class="text-sm hover:text-muted-foreground transition">Projects</a
         >
         <button
-          onclick={() => scrollToSection("services")}
+          on:click={() => scrollToSection("services")}
           class="text-sm hover:text-muted-foreground transition text-left"
           >Services</button
         >
         <button
-          onclick={() => scrollToSection("about")}
+          on:click={() => scrollToSection("about")}
           class="text-sm hover:text-muted-foreground transition text-left"
           >About</button
         >
         <button
-          onclick={() => scrollToSection("contact")}
+          on:click={() => scrollToSection("contact")}
           class="text-sm hover:text-muted-foreground transition text-left"
           >Contact</button
         >

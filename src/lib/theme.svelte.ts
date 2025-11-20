@@ -29,8 +29,6 @@ function createTheme() {
     const stored = localStorage.getItem('theme') as 'light' | 'dark' | null;
     if (stored) {
       setTheme(stored);
-    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-      setTheme('light');
     } else {
       setTheme('dark');
     }

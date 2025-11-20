@@ -7,7 +7,7 @@
     {
       title: "De Ronin",
       category: "Portfolio Websites",
-      image: "/images/de-ronin.png",
+      image: "/images/deronin.png",
       link: "#",
     },
     {
@@ -25,61 +25,61 @@
 
     // Landing Pages
     {
-      title: "Crypto Exchange",
+      title: "422 Brand",
       category: "Landing Pages",
-      image: "/images/crypto-exchange.png",
+      image: "/images/422brand.png",
       link: "#",
     },
     {
-      title: "SaaS Platform",
+      title: "Axia",
       category: "Landing Pages",
-      image: "/images/saas-platform.png",
+      image: "/images/axia.png",
       link: "#",
     },
     {
-      title: "E-commerce Store",
+      title: "Web3 Righteous",
       category: "Landing Pages",
-      image: "/images/ecommerce-store.png",
+      image: "/images/web3righteous.png",
       link: "#",
     },
 
     // Web Apps & Tools
     {
-      title: "Task Manager",
+      title: "Data Viz",
       category: "Web Apps & Tools",
-      image: "/placeholder.svg",
+      image: "/images/dataviz.png",
       link: "#",
     },
     {
-      title: "Analytics Dashboard",
+      title: "Duke",
       category: "Web Apps & Tools",
-      image: "/placeholder.svg",
+      image: "/images/duke.png",
       link: "#",
     },
     {
-      title: "Chat Application",
+      title: "LIG",
       category: "Web Apps & Tools",
-      image: "/placeholder.svg",
+      image: "/images/lig.png",
       link: "#",
     },
 
     // Bots & Automations
     {
-      title: "Discord Bot",
+      title: "David French",
       category: "Bots & Automations",
-      image: "/images/discord-bot.png",
+      image: "/images/david-french.png",
       link: "#",
     },
     {
-      title: "Sentient Content Bot",
+      title: "Teaona",
       category: "Bots & Automations",
-      image: "/placeholder.svg",
+      image: "/images/teaona.png",
       link: "#",
     },
     {
-      title: "RugGuard",
+      title: "Valery",
       category: "Bots & Automations",
-      image: "/placeholder.svg",
+      image: "/images/valery.png",
       link: "#",
     },
   ];
@@ -107,6 +107,28 @@
 </svelte:head>
 
 <div class="mx-auto max-w-7xl px-4 py-16 md:px-6 md:py-24">
+  <div class="mb-8">
+    <a
+      href="/"
+      class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition"
+    >
+      <svg
+        class="w-4 h-4"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M15 19l-7-7 7-7"
+        />
+      </svg>
+      Back to Home
+    </a>
+  </div>
+
   <h1 class="text-4xl font-semibold md:text-5xl">All Projects</h1>
   <p class="mt-3 text-sm text-muted-foreground md:mt-4 md:text-base">
     Browse through my portfolio of web development projects
@@ -126,7 +148,7 @@
     <div class="flex gap-2 overflow-x-auto scrollbar-hide">
       {#each categories as category}
         <button
-          onclick={() => (selectedCategory = category)}
+          on:click={() => (selectedCategory = category)}
           class="whitespace-nowrap rounded-lg px-4 py-2 text-sm font-medium transition {selectedCategory ===
           category
             ? 'bg-primary text-primary-foreground'

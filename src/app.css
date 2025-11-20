@@ -74,6 +74,16 @@ html.light {
   }
   body {
     @apply bg-background text-foreground;
+    background-image: repeating-linear-gradient(
+        to right,
+        var(--border) 0 1px,
+        transparent 1px 40px
+      ),
+      repeating-linear-gradient(
+        to bottom,
+        var(--border) 0 1px,
+        transparent 1px 40px
+      );
   }
 
   body {
@@ -100,18 +110,7 @@ html.light {
   }
 }
 
-html.light body {
-  background-image: repeating-linear-gradient(
-      to right,
-      var(--border) 0 1px,
-      transparent 1px 40px
-    ),
-    repeating-linear-gradient(
-      to bottom,
-      var(--border) 0 1px,
-      transparent 1px 40px
-    );
-}
+
 
 @layer utilities {
   .reveal-on-scroll {
