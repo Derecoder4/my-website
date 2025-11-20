@@ -1,44 +1,39 @@
-import { writable } from "svelte/store"
+import { browser } from '$app/environment';
 
-type Theme = "dark" | "light"
+function createTheme() {
+  let current = $state<'light' | 'dark'>('dark');
 
-function createThemeStore() {
-  let initialTheme: Theme = "dark"
-
-  if (typeof window !== "undefined") {
-    const stored = localStorage.getItem("theme") as Theme | null
-    if (stored) {
-      initialTheme = stored
-    } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
-      initialTheme = "light"
+  function setTheme(newTheme: 'light' | 'dark') {
+    current = newTheme;
+    if (browser) {
+      localStorage.setItem('theme', newTheme);
+      document.documentElement.classList.remove('light', 'dark');
+      document.documentElement.classList.add(newTheme);
     }
   }
 
-  const { subscribe, set } = writable<Theme>(initialTheme)
+  function toggle() {
+    setTheme(current === 'dark' ? 'light' : 'dark');
+  }
+
+  if (browser) {
+    const stored = localStorage.getItem('theme') as 'light' | 'dark' | null;
+    if (stored) {
+      setTheme(stored);
+    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+      setTheme('light');
+    } else {
+      setTheme('dark');
+    }
+  }
 
   return {
-    subscribe,
-    setTheme: (theme: Theme) => {
-      if (typeof window !== "undefined") {
-        localStorage.setItem("theme", theme)
-        document.documentElement.classList.remove("light", "dark")
-        document.documentElement.classList.add(theme)
-      }
-      set(theme)
+    get current() {
+      return current;
     },
-    toggle: () => {
-      subscribe((current) => {
-        const newTheme = current === "dark" ? "light" : "dark"
-        if (typeof window !== "undefined") {
-          localStorage.setItem("theme", newTheme)
-          document.documentElement.classList.remove("light", "dark")
-          document.documentElement.classList.add(newTheme)
-        }
-        set(newTheme)
-        return newTheme
-      })()
-    },
-  }
+    setTheme,
+    toggle
+  };
 }
 
-export const theme = createThemeStore()
+export const theme = createTheme();
