@@ -1,10 +1,11 @@
 import { browser } from '$app/environment';
+import { writable } from 'svelte/store';
 
 function createTheme() {
-  let current = $state<'light' | 'dark'>('dark');
+  const { subscribe, set, update } = writable<'light' | 'dark'>('dark');
 
   function setTheme(newTheme: 'light' | 'dark') {
-    current = newTheme;
+    set(newTheme);
     if (browser) {
       localStorage.setItem('theme', newTheme);
       document.documentElement.classList.remove('light', 'dark');
@@ -13,7 +14,15 @@ function createTheme() {
   }
 
   function toggle() {
-    setTheme(current === 'dark' ? 'light' : 'dark');
+    update(current => {
+      const newTheme = current === 'dark' ? 'light' : 'dark';
+      if (browser) {
+        localStorage.setItem('theme', newTheme);
+        document.documentElement.classList.remove('light', 'dark');
+        document.documentElement.classList.add(newTheme);
+      }
+      return newTheme;
+    });
   }
 
   if (browser) {
@@ -28,9 +37,7 @@ function createTheme() {
   }
 
   return {
-    get current() {
-      return current;
-    },
+    subscribe,
     setTheme,
     toggle
   };

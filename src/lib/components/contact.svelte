@@ -1,9 +1,9 @@
 <script lang="ts">
   import { reveal } from "$lib/actions/reveal";
 
-  let isSubmitting = $state(false);
-  let submitStatus = $state<"idle" | "success" | "error">("idle");
-  let statusMessage = $state("");
+  let isSubmitting = false;
+  let submitStatus: "idle" | "success" | "error" = "idle";
+  let statusMessage = "";
 
   async function handleSubmit(event: Event) {
     event.preventDefault();
@@ -34,7 +34,6 @@
       statusMessage = "Failed to send message. Please try again.";
     } finally {
       isSubmitting = false;
-      // Clear status after 5 seconds
       setTimeout(() => {
         submitStatus = "idle";
         statusMessage = "";
@@ -58,17 +57,12 @@
   </p>
 
   <form onsubmit={handleSubmit} class="mt-8 space-y-5 md:mt-12 md:space-y-6">
-    <!-- Web3Forms Access Key -->
     <input
       type="hidden"
       name="access_key"
       value="e24e68f1-fa48-4054-a1d2-88b42834cb90"
     />
-
-    <!-- Optional: Redirect after submission -->
     <input type="hidden" name="redirect" value="false" />
-
-    <!-- Optional: Custom subject line -->
     <input
       type="hidden"
       name="subject"
@@ -111,7 +105,6 @@
       ></textarea>
     </div>
 
-    <!-- Honeypot for spam protection -->
     <input
       type="checkbox"
       name="botcheck"

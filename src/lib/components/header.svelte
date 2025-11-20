@@ -1,7 +1,12 @@
 <script lang="ts">
-  import { theme } from "$lib/theme.svelte.js";
+  import { theme } from "$lib/theme.svelte";
 
-  let mobileMenuOpen = $state(false);
+  let mobileMenuOpen = false;
+  let currentTheme: "light" | "dark" = "dark";
+
+  theme.subscribe((value) => {
+    currentTheme = value;
+  });
 
   function scrollToSection(id: string) {
     mobileMenuOpen = false;
@@ -53,14 +58,14 @@
         onclick={toggleTheme}
         class="text-sm hover:text-muted-foreground transition pl-4 border-l border-border"
       >
-        {theme.current === "dark" ? "☀" : "🌙"}
+        {currentTheme === "dark" ? "☀" : "🌙"}
       </button>
     </div>
 
     <!-- Mobile menu button and theme toggle -->
     <div class="flex items-center gap-4 md:hidden">
       <button onclick={toggleTheme} class="text-xl">
-        {theme.current === "dark" ? "☀" : "🌙"}
+        {currentTheme === "dark" ? "☀" : "🌙"}
       </button>
       <button
         onclick={() => (mobileMenuOpen = !mobileMenuOpen)}
