@@ -12,82 +12,108 @@
   const projects: Project[] = [
     // Portfolio Websites
     {
+      title: "Web3 Righteous",
+      category: "Portfolio Websites",
+      image: "/images/web3righteous.png",
+      link: "https://web3righteous.netlify.app/",
+    },
+    {
       title: "De Ronin",
       category: "Portfolio Websites",
       image: "/images/deronin.png",
-      link: "#",
+      link: "https://deronin.netlify.app/",
     },
     {
-      title: "Sons Design",
+      title: "Duke The Great",
       category: "Portfolio Websites",
-      image: "/images/sons-design.png",
-      link: "#",
+      image: "/images/duke.png",
+      link: "https://dukethagreat.netlify.app/",
     },
     {
-      title: "Torest Tech",
+      title: "Teaona",
       category: "Portfolio Websites",
-      image: "/images/torest-tech.png",
-      link: "#",
+      image: "/images/teaona.png",
+      link: "https://teaona.lovable.app/",
+    },
+    {
+      title: "Boyo.T",
+      category: "Portfolio Websites",
+      image: "/images/boyo.png",
+      link: "https://boyotoritseju.netlify.app/",
+    },
+    {
+      title: "David's French Class",
+      category: "Portfolio Websites",
+      image: "/images/david-french.png",
+      link: "https://davidfrenchclass.netlify.app/",
+    },
+    {
+      title: "The Great Ola",
+      category: "Portfolio Websites",
+      image: "/images/me.jpg", // Using placeholder as no specific image was provided for this new one
+      link: "https://thegreatola.netlify.app/",
     },
 
     // Landing Pages
     {
+      title: "Sons Design",
+      category: "Landing Pages",
+      image: "/images/sons-design.png",
+      link: "https://sonsdesign.netlify.app/",
+    },
+    {
+      title: "Torest Tech",
+      category: "Landing Pages",
+      image: "/images/torest-tech.png",
+      link: "https://toresttech.space/",
+    },
+    {
       title: "422 Brand",
       category: "Landing Pages",
       image: "/images/422brand.png",
-      link: "#",
-    },
-    {
-      title: "Axia",
-      category: "Landing Pages",
-      image: "/images/axia.png",
-      link: "#",
-    },
-    {
-      title: "Web3 Righteous",
-      category: "Landing Pages",
-      image: "/images/web3righteous.png",
-      link: "#",
-    },
-
-    // Web Apps & Tools
-    {
-      title: "Data Viz",
-      category: "Web Apps & Tools",
-      image: "/images/dataviz.png",
-      link: "#",
-    },
-    {
-      title: "Duke",
-      category: "Web Apps & Tools",
-      image: "/images/duke.png",
-      link: "#",
+      link: "https://four-twenty-two-brand-launch.lovable.app/",
     },
     {
       title: "LIG",
-      category: "Web Apps & Tools",
+      category: "Landing Pages",
       image: "/images/lig.png",
-      link: "#",
+      link: "https://v0-network-animation.vercel.app/",
     },
 
     // Bots & Automations
     {
-      title: "David French",
+      title: "Sentient Content Bot",
       category: "Bots & Automations",
-      image: "/images/david-french.png",
-      link: "#",
+      image: "/images/valery.png", // Using placeholder
+      link: "https://t.me/sentientcontentbot",
     },
     {
-      title: "Teaona",
+      title: "Rugguard Bot",
       category: "Bots & Automations",
-      image: "/images/teaona.png",
-      link: "#",
+      image: "/images/valery.png", // Using placeholder
+      link: "https://github.com/Derecoder4/Rugguard-bot",
+    },
+
+    // Web Apps & Tools (Utility apps)
+    {
+      title: "Axia",
+      category: "Web Apps & Tools",
+      image: "/images/axia.png",
+      link: "https://axia-dobby.vercel.app/",
     },
     {
-      title: "Valery",
-      category: "Bots & Automations",
-      image: "/images/valery.png",
-      link: "#",
+      title: "Data Viz",
+      category: "Web Apps & Tools",
+      image: "/images/dataviz.png",
+      link: "https://busiiness-analys.lovable.app/",
+    },
+
+    // Models
+    {
+      title: "Early Warning System",
+      category: "AI Models",
+      image: "/images/dataviz.png", // Using placeholder
+      link: "#", // No link provided
     },
   ];
 
@@ -97,6 +123,7 @@
     "Landing Pages",
     "Web Apps & Tools",
     "Bots & Automations",
+    "AI Models",
   ];
 
   $: filteredProjects = projects.filter((project) => {

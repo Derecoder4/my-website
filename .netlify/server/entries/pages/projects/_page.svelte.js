@@ -6,78 +6,107 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   const projects = [
     // Portfolio Websites
     {
+      title: "Web3 Righteous",
+      category: "Portfolio Websites",
+      image: "/images/web3righteous.png",
+      link: "https://web3righteous.netlify.app/"
+    },
+    {
       title: "De Ronin",
       category: "Portfolio Websites",
       image: "/images/deronin.png",
-      link: "#"
+      link: "https://deronin.netlify.app/"
     },
     {
-      title: "Sons Design",
+      title: "Duke The Great",
       category: "Portfolio Websites",
+      image: "/images/duke.png",
+      link: "https://dukethagreat.netlify.app/"
+    },
+    {
+      title: "Teaona",
+      category: "Portfolio Websites",
+      image: "/images/teaona.png",
+      link: "https://teaona.lovable.app/"
+    },
+    {
+      title: "Boyo.T",
+      category: "Portfolio Websites",
+      image: "/images/boyo.png",
+      link: "https://boyotoritseju.netlify.app/"
+    },
+    {
+      title: "David's French Class",
+      category: "Portfolio Websites",
+      image: "/images/david-french.png",
+      link: "https://davidfrenchclass.netlify.app/"
+    },
+    {
+      title: "The Great Ola",
+      category: "Portfolio Websites",
+      image: "/images/me.jpg",
+      // Using placeholder as no specific image was provided for this new one
+      link: "https://thegreatola.netlify.app/"
+    },
+    // Landing Pages
+    {
+      title: "Sons Design",
+      category: "Landing Pages",
       image: "/images/sons-design.png",
-      link: "#"
+      link: "https://sonsdesign.netlify.app/"
     },
     {
       title: "Torest Tech",
-      category: "Portfolio Websites",
+      category: "Landing Pages",
       image: "/images/torest-tech.png",
-      link: "#"
+      link: "https://toresttech.space/"
     },
-    // Landing Pages
     {
       title: "422 Brand",
       category: "Landing Pages",
       image: "/images/422brand.png",
-      link: "#"
+      link: "https://four-twenty-two-brand-launch.lovable.app/"
     },
+    {
+      title: "LIG",
+      category: "Landing Pages",
+      image: "/images/lig.png",
+      link: "https://v0-network-animation.vercel.app/"
+    },
+    // Bots & Automations
+    {
+      title: "Sentient Content Bot",
+      category: "Bots & Automations",
+      image: "/images/valery.png",
+      // Using placeholder
+      link: "https://t.me/sentientcontentbot"
+    },
+    {
+      title: "Rugguard Bot",
+      category: "Bots & Automations",
+      image: "/images/valery.png",
+      // Using placeholder
+      link: "https://github.com/Derecoder4/Rugguard-bot"
+    },
+    // Web Apps & Tools (Utility apps)
     {
       title: "Axia",
-      category: "Landing Pages",
+      category: "Web Apps & Tools",
       image: "/images/axia.png",
-      link: "#"
+      link: "https://axia-dobby.vercel.app/"
     },
-    {
-      title: "Web3 Righteous",
-      category: "Landing Pages",
-      image: "/images/web3righteous.png",
-      link: "#"
-    },
-    // Web Apps & Tools
     {
       title: "Data Viz",
       category: "Web Apps & Tools",
       image: "/images/dataviz.png",
-      link: "#"
+      link: "https://busiiness-analys.lovable.app/"
     },
+    // Models
     {
-      title: "Duke",
-      category: "Web Apps & Tools",
-      image: "/images/duke.png",
-      link: "#"
-    },
-    {
-      title: "LIG",
-      category: "Web Apps & Tools",
-      image: "/images/lig.png",
-      link: "#"
-    },
-    // Bots & Automations
-    {
-      title: "David French",
-      category: "Bots & Automations",
-      image: "/images/david-french.png",
-      link: "#"
-    },
-    {
-      title: "Teaona",
-      category: "Bots & Automations",
-      image: "/images/teaona.png",
-      link: "#"
-    },
-    {
-      title: "Valery",
-      category: "Bots & Automations",
-      image: "/images/valery.png",
+      title: "Early Warning System",
+      category: "AI Models",
+      image: "/images/dataviz.png",
+      // Using placeholder
       link: "#"
     }
   ];
@@ -86,7 +115,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     "Portfolio Websites",
     "Landing Pages",
     "Web Apps & Tools",
-    "Bots & Automations"
+    "Bots & Automations",
+    "AI Models"
   ];
   filteredProjects = projects.filter((project) => {
     const matchesSearch = project.title.toLowerCase().includes(searchQuery.toLowerCase());

@@ -21,7 +21,7 @@ const Projects = create_ssr_component(($$result, $$props, $$bindings, slots) => 
     {
       title: "Axia",
       description: "Crypto Analysis Platform",
-      link: "#",
+      link: "https://axia-dobby.vercel.app/",
       image: "/images/axia.png"
     },
     {
@@ -31,51 +31,51 @@ const Projects = create_ssr_component(($$result, $$props, $$bindings, slots) => 
       image: "/images/duke.png"
     },
     {
-      title: "Valery Rentals",
-      description: "Vacation Rental Platform",
-      link: "#",
+      title: "Sentient Content Bot",
+      description: "Telegram Automation Bot",
+      link: "https://t.me/sentientcontentbot",
       image: "/images/valery.png"
     },
     {
       title: "Boyo.T",
       description: "IT Specialist Portfolio",
-      link: "#",
+      link: "https://boyotoritseju.netlify.app/",
       image: "/images/boyo.png"
     },
     {
       title: "Teaona",
       description: "Web3 Strategist Portfolio",
-      link: "https://web3righteous.netlify.app/",
+      link: "https://teaona.lovable.app/",
       image: "/images/teaona.png"
     },
     {
       title: "David's French Class",
       description: "Language Learning Platform",
-      link: "#",
+      link: "https://davidfrenchclass.netlify.app/",
       image: "/images/david-french.png"
     },
     {
-      title: "DataViz Pro",
+      title: "Data Viz",
       description: "Business Analytics Dashboard",
-      link: "#",
+      link: "https://busiiness-analys.lovable.app/",
       image: "/images/dataviz.png"
     },
     {
       title: "LIG",
       description: "Autonomous AI Intelligence",
-      link: "#",
+      link: "https://v0-network-animation.vercel.app/",
       image: "/images/lig.png"
     },
     {
-      title: "Web3Righteous",
+      title: "Web3 Righteous",
       description: "Web3 Marketing Agency",
-      link: "#",
+      link: "https://web3righteous.netlify.app/",
       image: "/images/web3righteous.png"
     },
     {
-      title: "422 The Brand",
+      title: "422 Brand",
       description: "Creative Streetwear & Branding",
-      link: "#",
+      link: "https://four-twenty-two-brand-launch.lovable.app/",
       image: "/images/422brand.png"
     }
   ];
