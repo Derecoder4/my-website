@@ -37,6 +37,6 @@ declare module "$app/types" {
 		};
 		Pathname(): "/" | "/projects" | "/projects/";
 		ResolvedPathname(): `${"" | `/${string}`}${ReturnType<AppTypes['Pathname']>}`;
-		Asset(): "/favicon.png" | "/images/422brand.png" | "/images/axia.png" | "/images/boyo.png" | "/images/dataviz.png" | "/images/david-french.png" | "/images/duke.png" | "/images/lig.png" | "/images/teaona.png" | "/images/valery.png" | "/images/web3righteous.png" | string & {};
+		Asset(): "/favicon.png" | "/images/422brand.png" | "/images/axia.png" | "/images/boyo.png" | "/images/dataviz.png" | "/images/david-french.png" | "/images/deronin.png" | "/images/duke.png" | "/images/lig.png" | "/images/me.jpg" | "/images/menu-icon.png" | "/images/sons-design.png" | "/images/teaona.png" | "/images/torest-tech.png" | "/images/valery.png" | "/images/web3righteous.png" | string & {};
 	}
 }
