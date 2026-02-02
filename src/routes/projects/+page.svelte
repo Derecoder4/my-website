@@ -54,44 +54,50 @@
       link: "https://thegreatola.netlify.app/",
     },
 
-    // Landing Pages
+    // Landing Pages & Websites
     {
       title: "Sons Design",
-      category: "Landing Pages",
+      category: "Landing Pages & Websites",
       image: "/images/sons-design.png",
       link: "https://sonsdesign.netlify.app/",
     },
     {
       title: "Torest Tech",
-      category: "Landing Pages",
+      category: "Landing Pages & Websites",
       image: "/images/torest-tech.png",
       link: "https://toresttech.space/",
     },
     {
       title: "422 Brand",
-      category: "Landing Pages",
+      category: "Landing Pages & Websites",
       image: "/images/422brand.png",
       link: "https://four-twenty-two-brand-launch.lovable.app/",
     },
     {
       title: "LIG",
-      category: "Landing Pages",
+      category: "Landing Pages & Websites",
       image: "/images/lig.png",
       link: "https://v0-network-animation.vercel.app/",
+    },
+    {
+      title: "Omahealthcare",
+      category: "Landing Pages & Websites",
+      image: "/images/omahealthcare.png",
+      link: "https://omahealthcare.netlify.app/",
     },
 
     // Bots & Automations
     {
       title: "Sentient Content Bot",
       category: "Bots & Automations",
-      image: "/images/valery.png", // Using placeholder
       link: "https://t.me/sentientcontentbot",
+      image: "",
     },
     {
       title: "Rugguard Bot",
       category: "Bots & Automations",
-      image: "/images/valery.png", // Using placeholder
       link: "https://github.com/Derecoder4/Rugguard-bot",
+      image: "",
     },
 
     // Web Apps & Tools (Utility apps)
@@ -112,15 +118,16 @@
     {
       title: "Early Warning System",
       category: "AI Models",
-      image: "/images/dataviz.png", // Using placeholder
-      link: "#", // No link provided
+
+      link: "#",
+      image: "",
     },
   ];
 
   const categories = [
     "All",
     "Portfolio Websites",
-    "Landing Pages",
+    "Landing Pages & Websites",
     "Web Apps & Tools",
     "Bots & Automations",
     "AI Models",
@@ -208,9 +215,28 @@
             class="h-full w-full object-cover transition group-hover:scale-105"
           />
         </div>
-        <div class="p-4">
-          <h3 class="font-semibold">{project.title}</h3>
-          <p class="mt-1 text-sm text-muted-foreground">{project.category}</p>
+        <div class="p-4 flex items-center justify-between">
+          <div>
+            <h3 class="font-semibold">{project.title}</h3>
+            <p class="mt-1 text-sm text-muted-foreground">{project.category}</p>
+          </div>
+          <div
+            class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-all duration-300"
+          >
+            <svg
+              class="w-5 h-5 text-primary group-hover:text-primary-foreground transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M7 17L17 7M17 7H7M17 7V17"
+              />
+            </svg>
+          </div>
         </div>
       </a>
     {/each}

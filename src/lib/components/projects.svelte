@@ -19,7 +19,6 @@
       title: "Sentient Content Bot",
       description: "Telegram Automation Bot",
       link: "https://t.me/sentientcontentbot",
-      image: "/images/valery.png",
     },
     {
       title: "Boyo.T",
